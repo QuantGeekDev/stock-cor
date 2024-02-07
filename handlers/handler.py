@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Handler(ABC):
     """Handler interface for Chain of Responsibility"""
 
@@ -8,7 +9,7 @@ class Handler(ABC):
         pass
 
     @abstractmethod
-    def handle(self, request):
+    def handle(self, trade_signal):
         pass
 
 
@@ -22,8 +23,8 @@ class AbstractHandler(Handler):
         return handler
 
     @abstractmethod
-    def handle(self, request):
+    def handle(self, trade_signal):
         if self._next_handler:
-            return self._next_handler.handle(request)
+            return self._next_handler.handle(trade_signal)
 
         return None
