@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class TradeRequest:
+class TradeSignal:
     """ Class for holding information regarding the generated TradeSignal"""
     def __init__(self, symbol, quantity, price):
         self.symbol = symbol
